@@ -21,14 +21,15 @@ public class MainActivity3 extends AppCompatActivity {
                 startActivity(intent3);
             }
         });
+    }
 
-//        Button nextbuttonPermit = findViewById(R.id.buttonPermits);
-//        nextbuttonPermit.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intentPermit = new Intent(MainActivity3.this, MainActivity5.class);
-//                startActivity(intentPermit);
-//            }
-//        });
+    public boolean createDatabse()
+    {
+        DatabaseHelper dbHelper = new DatabaseHelper(this);
+        boolean result = dbHelper.addUser("aditya@gmail.com", "password", 1);
+        if(result == true)
+            return true;
+        else
+            return false;
     }
 }
